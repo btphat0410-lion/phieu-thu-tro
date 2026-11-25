@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tro-fullstack-shell-v8';
+const CACHE_NAME = 'tro-fullstack-shell-v9';
 const SHELL_URLS = [
   '/',
   '/app',

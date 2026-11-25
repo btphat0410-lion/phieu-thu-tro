@@ -445,7 +445,7 @@ const info=[['Phòng',esc(h.room)],v.tenant&&['Người thuê',esc(h.tenant||'�
 const payment=invoicePayment(h);
 const paymentDetails=Object.prototype.hasOwnProperty.call(payment,'bank')?payment.bank:s.bank;
 const qr=hasQrAccount(payment)
-  ?`https://img.vietqr.io/image/${encodeURIComponent(payment.bankBin)}-${encodeURIComponent(payment.bankAccount)}-compact2.png?amount=${encodeURIComponent(Math.round(h.total))}&addInfo=${encodeURIComponent(no)}&accountName=${encodeURIComponent(payment.bankOwner)}`
+  ?`https://img.vietqr.io/image/${encodeURIComponent(payment.bankBin)}-${encodeURIComponent(payment.bankAccount)}-compact2.svg?amount=${encodeURIComponent(Math.round(h.total))}&addInfo=${encodeURIComponent(no)}&accountName=${encodeURIComponent(payment.bankOwner)}`
   :'';
 const imgs=(v.meters&&(h.imgE||h.imgW))?`<div style="margin-top:16px"><div style="font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;color:#66738a;margin-bottom:6px">Ảnh đồng hồ</div><div class="imgs">${h.imgE?`<div><img src="${h.imgE}" alt="Điện"><p>Đồng hồ điện</p></div>`:''} ${h.imgW?`<div><img src="${h.imgW}" alt="Nước"><p>Đồng hồ nước</p></div>`:''}</div></div>`:'';
 return `<div class="hd"><div class="hl">${v.logo&&s.logo?`<img class="lg" src="${s.logo}" alt="">`:''}<div><h3>${esc(title)}</h3><p>Kỳ thanh toán: Tháng ${h.m}/${h.y}</p></div></div><div class="no">Số phiếu<b>${no}</b></div></div>
